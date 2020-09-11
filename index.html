@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <title>Financial Calculator by mrdmittry</title>
+    <script type="text/javascript" src="math.js" defer></script>
+    <script type="text/javascript" src="ui.js" defer></script>
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+    <!-- The below part gets deployed online -->
+    <div>
+        <div>
+            <input type="radio" id="ann-ord" name="annuity-type" value="ann-ord" checked>
+            <label for="ann-ord">Ordinary annuity</label><br/>
+            <input type="radio" id="ann-due" name="annuity-type" value="ann-due" disabled>
+            <label for="ann-due">Annuity due</label><br/>
+        </div>
+        <br/>
+    
+        <div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="text" id="n" name="n"><br>
+                    </td>
+                    <td>
+                        <input type="text" id="iy" name="iy"><br>
+                    </td>
+                    <td>
+                        <input type="text" id="pv" name="pv"><br>
+                    </td>
+                    <td>
+                        <input type="text" id="pmt" name="pmt"><br>
+                    </td>
+                    <td>
+                        <input type="text" id="fv" name="fv"><br>
+                    </td>
+                </tr>
+    
+                <tr>
+                    <td>
+                        <input type="button" id="btn_n" onclick="on_n()" value="N">
+                    </td>
+                    <td>
+                        <input type="button" id="btn_iy" onclick="on_iy()" value="I/Y">
+                    </td>
+                    <td>
+                        <input type="button" id="btn_pv" onclick="on_pv()" value="PV">
+                    </td>
+                    <td>
+                        <input type="button" id="btn_pmt" onclick="on_pmt()" value="PMT">
+                    </td>
+                    <td>
+                        <input type="button" id="btn_fv" onclick="on_fv()" value="FV">
+                    </td>
+                </tr>
+            </table>    
+        </div>
+    </div>
+    
+    <div>
+        <br/>
+        <h3>Known issues:</h3>
+        <ul class="issues-list">
+            <li>Only ordinary annuity works for now. Annuity due will come soon.</li>
+            <li>Doesn't solve for interest rate when both PMT and PV or FV are not zero.</li>
+            <li>Precision is set to 2 decimals. Thus zero can be negative sometimes.</li>
+            <li>Doesn't look good on mobile phone screens.</li>
+        </ul>
+    </div>    
+    <!-- The above part gets deployed online -->
+
+</body>
+
+</html>
