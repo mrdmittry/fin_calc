@@ -83,10 +83,6 @@ function calc_payment (pv, fv, i, n) {
 /*     EAR part      */
 /**********************/
 
-ear = eff
-i = nom
-n = cy
-
 function calc_eff (cy, nom) {    
     return pow(1 + nom/cy, cy) - 1;
 }
