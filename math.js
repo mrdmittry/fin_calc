@@ -48,9 +48,10 @@ function calc_periods (pv, fv, pmt, i) {
             n = -ln(1 - pv * i / pmt) / ln(1 + i);
         } else if (pv == 0 && fv != 0) {
             n = ln(1 + fv * i / pmt) / ln(1 + i);
-        } else /* if both pmt and fv or pv != 0 */ {        
-            pmt = abs(pmt);
+        } else /* if pmt, fv and pv are all != 0 */ {        
+            pv = abs(pv);
             fv = abs(fv);
+            pmt = abs(pmt);
             n = (ln(fv + pmt / i) - ln(pv + pmt / i)) / ln(1 + i);
         }
     }
@@ -58,6 +59,11 @@ function calc_periods (pv, fv, pmt, i) {
 }
 function calc_payment (pv, fv, i, n) {
     var pmt = 0;
+    /*
+    if (pv != 0 && fv != 0) {
+        pmt = (pv * pow(1+i, n) + fv) * i / (1 - pow(1+i,n));
+    } else if {} else if {}
+    */
     if (pv != 0) {
         pmt = (pv * i) / (1 - pow(1+i, -n));
     }
