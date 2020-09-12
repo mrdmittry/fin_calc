@@ -1,10 +1,16 @@
-/**********************/
-/*     Math part      */
-/**********************/
+/************************/
+/*     Mathematics      */
+/************************/
+
 var ln = Math.log;
 var abs = Math.abs;
 var pow = Math.pow;
 var i_err = "Error";
+
+
+/**********************/
+/*     TVM part      */
+/**********************/
 
 function calc_present_value (fv, pmt, i, n) {
     var pv = 0;
@@ -71,4 +77,19 @@ function calc_payment (pv, fv, i, n) {
         pmt += (fv * i) / (pow(1+i, n) - 1);
     }
     return -pmt;
+}
+
+/**********************/
+/*     EAR part      */
+/**********************/
+
+ear = eff
+i = nom
+n = cy
+
+function calc_eff (cy, nom) {    
+    return pow(1 + nom/cy, cy) - 1;
+}
+function calc_nom (eff, cy) {
+    return (pow(eff + 1, 1/cy) - 1) * cy;
 }
