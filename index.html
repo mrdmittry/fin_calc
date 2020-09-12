@@ -1,0 +1,126 @@
+<html>
+
+<head>
+    <title>Financial Calculator by mrdmittry</title>
+    <script type="text/javascript" src="math.js" defer></script>
+    <script type="text/javascript" src="ui.js" defer></script>
+    <link rel="stylesheet" href="calc.css">
+</head>
+
+<body>
+    <!-- The below part gets deployed online -->
+    <div class="container">
+        <div>
+            <h3>Time Value of Money</h3>
+
+            <div>
+                <input type="radio" id="ann-ord" name="annuity-type" value="ann-ord" checked>
+                <label for="ann-ord">Ordinary annuity</label><br/>
+                <input type="radio" id="ann-due" name="annuity-type" value="ann-due" disabled>
+                <label for="ann-due">Annuity due</label><br/>
+            </div>
+            <br/>
+        
+            <div class="tvm">
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" id="n" name="n"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="iy" name="iy"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="pv" name="pv"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="pmt" name="pmt"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="fv" name="fv"><br>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>
+                            <input type="button" onclick="on_n()" value="N">
+                        </td>
+                        <td>
+                            <input type="button" onclick="on_iy()" value="I/Y">
+                        </td>
+                        <td>
+                            <input type="button" onclick="on_pv()" value="PV">
+                        </td>
+                        <td>
+                            <input type="button" onclick="on_pmt()" value="PMT">
+                        </td>
+                        <td>
+                            <input type="button" onclick="on_fv()" value="FV">
+                        </td>
+                    </tr>
+                </table>    
+                <img class="tvm_formula" src="https://miro.medium.com/max/640/1*N4v1tXhjnMvUT1-iEdpJCQ.png" alt="TVM Formula">
+            </div>
+
+            <br/>
+
+            <div class="eff">
+                <h3>Effective Annual Rate</h3>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" id="eff" name="eff"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="cy" name="cy"><br>
+                        </td>
+                        <td>
+                            <input type="text" id="nom" name="nom"><br>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td>
+                            <input type="button" onclick="on_eff()" value="EFF">
+                        </td>
+                        <td>
+                            <input type="button" id="btn_cy" onclick="on_cy()" value="C/Y" disabled>
+                        </td>
+                        <td>
+                            <input type="button" onclick="on_nom()" value="NOM">
+                        </td>
+                    </tr>
+                </table>
+                <img src="https://cdn.corporatefinanceinstitute.com/assets/effective-annual-rate.png" alt="EAR Formula">
+            </div>
+        </div>
+        
+        <div>
+            <br/>
+            <h3>Known issues:</h3>
+            <ul class="issues-list">
+                <li>Only ordinary annuity works for now. Annuity due will come soon.</li>
+                <li>Doesn't solve for interest rate when both PMT and PV or FV are not zero.</li>
+                <li>Solving for N with all PV, FV and PMT of different signs are unstable (WIP).</li>
+                <li>Precision is set to 2 decimals. Thus zero can sometimes show up as negative.</li>
+                <li>Doesn't look good on mobile phone screens.</li>
+            </ul>
+        </div>    
+
+        <div>
+            <br/>
+            <h3>Source code</h3>
+            <ul class="issues-list">
+                <li>The source code is available on <a href="https://github.com/mrdmittry/fin_calc" target="_blank">GitHub</a>.</li>
+                <li>Feel free to download the .ZIP file and run as a standalone verion.</li>
+            </ul>
+            <a href="https://github.com/mrdmittry/fin_calc" target="_blank">
+                <img class="github" src="https://www.cloudsavvyit.com/thumbcache/0/0/85f60b663104f044ba4840ed62faeefe/p/uploads/2019/10/ba9a7cbd.png" alt="GitHub">
+            </a>
+        </div>    
+    </div>
+<!-- The above part gets deployed online -->
+
+</body>
+
+</html>

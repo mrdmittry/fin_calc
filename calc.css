@@ -1,0 +1,47 @@
+.container {
+    font-family: arial;
+    line-height: 1.5em;
+}
+
+h3 {
+    margin: 12px 8px;
+}
+
+input[type=text] {
+    text-align: right;    
+}
+
+input[type=button] {
+    width: 100%;
+}
+
+table tr td input {
+    font-size: 18px;
+    padding: 4px;
+}
+
+table tr td {
+    padding: 4px;
+}
+
+.tvm table input {
+    width: 180px;
+}
+
+.eff table input {
+    width: 120px;
+}
+
+.tvm_formula {
+    width: 400px;
+    margin: 20px;
+}
+
+.github {
+    height: 50px;
+    margin: 0 0 20px 20px;
+}
+
+#btn_cy {
+    color: black;
+}
